@@ -1,0 +1,9 @@
+{
+  "name": "tusk-test-site",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "node tusk-pull.mjs && node tusk-apply.mjs ."
+  }
+}
