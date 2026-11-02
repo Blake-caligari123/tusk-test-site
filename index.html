@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- The two SEO lines: the browser tab title and the search description. -->
+<title data-tusk="home.page_title">North Studio | Architecture and interiors</title>
+<meta name="description" data-tusk="home.meta_description" content="A small architecture and interiors studio in Brisbane for homes, extensions and fit-outs.">
+<style>
+  body { margin: 0; font-family: Georgia, serif; color: #1c2a3a; background: #f7f5f0; }
+  header, main, footer { max-width: 900px; margin: 0 auto; padding: 24px; }
+  nav a { margin-right: 18px; color: #1c2a3a; }
+  h1 { font-size: 44px; margin: 24px 0 8px; }
+  h1 .accent { color: #b8562f; font-style: italic; }
+  .lead { font-size: 20px; color: #55606c; }
+  img { max-width: 100%; border-radius: 8px; }
+  .btn { display: inline-block; background: #1c2a3a; color: #fff; padding: 12px 18px; text-decoration: none; border-radius: 6px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 6px; text-transform: uppercase; letter-spacing: .08em; font-size: 13px; color: #b8562f; }
+  .eyebrow svg { stroke: currentColor; stroke-width: 2; fill: none; }
+</style>
+</head>
+<!-- One attribute per editable thing. data-tusk="page.field" or just "field" for this page. -->
+<body data-tusk-page="Home">
+<header>
+  <strong>north studio</strong>
+  <nav><a href="/">Work</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav>
+</header>
+<main>
+  <p data-tusk="home.eyebrow" data-tusk-label="Small line above the headline">Architecture and interiors, Brisbane</p>
+  <h1 data-tusk="home.headline">A small studio. A fresh perspective.</h1>
+  <p class="lead" data-tusk="home.intro">Thoughtful spaces, made for everyday life. We work with families and small businesses who want a building that fits how they actually live.</p>
+  <img data-tusk="home.hero" data-tusk-label="Hero photo" src="/brand/tusk-icon-256.png" alt="A bright living room">
+  <!-- A link: the client edits the words AND where it goes (a booking page,
+       a phone number, a social profile). An <a> with a real href is a link
+       on its own; data-tusk-kind="text" would keep only the words editable. -->
+  <p><a class="btn" data-tusk="home.cta" href="/contact/">Talk to us</a></p>
+
+  <!-- A toggle: the client shows or hides the whole notice. The line inside
+       is its own text field. -->
+  <aside data-tusk="home.notice" data-tusk-kind="toggle" data-tusk-label="Holiday notice">
+    <p data-tusk="home.notice_text">Closed 24 December to 6 January.</p>
+  </aside>
+
+  <!-- An embed: a video or a map. The client pastes a YouTube, Vimeo or
+       Google Maps address and the editor turns it into the player address. -->
+  <iframe data-tusk="home.video" data-tusk-label="Studio tour" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Studio tour" width="560" height="315"></iframe>
+
+  <!-- A photo slot with no <img>: the first photo goes into the inline
+       background-image. -->
+  <section data-tusk="home.banner" data-tusk-label="Banner photo" style="min-height: 120px; background: url('/brand/tusk-icon-256.png') center/cover"></section>
+
+  <!-- Inline markup inside a marked element ------------------------------
+       (a) A heading that wraps a styled <span> and a <br>. The client edits
+       only its own words; the decorative span and the line break are kept
+       when the page is published. The scanner also leaves a "heads up" note
+       telling the developer the styled parts are not editable this way. -->
+  <h1 data-tusk="home.tagline" data-tusk-label="Tagline">Made for <span class="accent">everyone</span>,<br>built for you.</h1>
+
+  <!-- (a) An eyebrow whose first child is an inline icon. Editing the words
+       leaves the leading <svg> exactly where it is. -->
+  <p class="eyebrow" data-tusk="home.badge" data-tusk-label="Badge line"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M7 2v10"/></svg> Now taking 2025 projects</p>
+
+  <!-- (b) data-tusk-kind="html": the client edits the inline markup itself.
+       Only safe inline tags survive a round-trip (a, b, strong, em, span,
+       br, small, sup/sub, mark, abbr, time, code, q, del, ins); scripts,
+       styles, event handlers and unsafe hrefs are removed. Use this only
+       when the client genuinely should edit links or emphasis in the copy. -->
+  <p data-tusk="home.rich" data-tusk-kind="html" data-tusk-label="Rich paragraph">Call the studio on <a href="tel:+61700000000">07 0000 0000</a>, or read <strong>how we work</strong> before you do.</p>
+
+  <h2 data-tusk="home.services_heading">What we do</h2>
+  <div data-tusk="home.services" data-tusk-label="Services">
+    <p>New homes and extensions, from first sketch to handover.</p>
+    <p>Interiors that make the most of light, storage and the way you move through a room.</p>
+    <p>Small commercial fit-outs for cafes, clinics and studios.</p>
+  </div>
+
+  <!-- A repeated group: the wrapper names the list, each child is an item,
+       and the parts inside are its sub-fields (title, body, one photo).
+       The client can add, remove and reorder entries; data-tusk-max caps it. -->
+  <h2>The team</h2>
+  <div data-tusk-list="home.team" data-tusk-label="Team" data-tusk-max="8">
+    <article data-tusk-item>
+      <img data-tusk-field="photo" data-tusk-label="Portrait" data-tusk-aspect="1:1" src="/brand/tusk-icon-256.png" alt="">
+      <h3 data-tusk-field="name">Mia Chen</h3>
+      <p data-tusk-field="role" data-tusk-label="Role">Director, architecture</p>
+      <p data-tusk-field="bio" data-tusk-kind="textarea">Mia set up the studio in 2019 after a decade on housing and school projects.</p>
+      <a data-tusk-field="profile" data-tusk-label="Profile link" href="https://www.linkedin.com/in/example">LinkedIn</a>
+    </article>
+    <article data-tusk-item>
+      <img data-tusk-field="photo" src="/brand/tusk-icon-256.png" alt="">
+      <h3 data-tusk-field="name">Tom Okafor</h3>
+      <p data-tusk-field="role">Interiors lead</p>
+      <p data-tusk-field="bio">Tom looks after interiors and the way a room actually gets used.</p>
+      <a data-tusk-field="profile" href="https://www.linkedin.com/in/example2">LinkedIn</a>
+    </article>
+  </div>
+
+  <p>Download our <a data-tusk="home.brochure" data-tusk-label="Capability brochure" href="/downloads/north-studio-capability.pdf">capability brochure</a>.</p>
+</main>
+<footer>
+  <p data-tusk="globals.footer_line">North Studio Pty Ltd · Brisbane · Since 2019</p>
+</footer>
+</body>
+</html>
